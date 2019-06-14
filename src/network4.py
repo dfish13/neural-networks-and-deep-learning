@@ -5,7 +5,7 @@ from keras.layers import Dense, Dropout, Flatten
 
 batch_size = 10
 num_classes = 10
-epochs = 5
+epochs = 30
 
 (x_train, y_train), (x_test, y_test) = mnist.load_data()
 
@@ -33,7 +33,7 @@ model.compile(loss=keras.losses.mean_squared_error,
 model.fit(x_train, y_train,
           batch_size=batch_size,
           epochs=epochs,
-          verbose=1)
+          verbose=2)
 score = model.evaluate(x_test, y_test, verbose=0)
 print('Test loss:', score[0])
 print('Test accuracy:', score[1])
